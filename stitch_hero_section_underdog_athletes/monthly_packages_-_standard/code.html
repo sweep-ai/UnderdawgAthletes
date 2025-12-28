@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Monthly Packages - Standard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e42121",
+                        "background-light": "#ffffff",
+                        "background-dark": "#121212", // Kept purely as fallback, design is white-dominant
+                        "surface-light": "#f8f9fa",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark z-10 sticky top-0">
+<button aria-label="Go back" class="flex items-center justify-center p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">arrow_back_ios_new</span>
+</button>
+<div class="text-sm font-semibold tracking-wide uppercase text-slate-400">Underdog Athletes</div>
+<div class="w-10"></div> <!-- Spacer for visual balance -->
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto px-6 pb-28">
+<!-- Headers -->
+<div class="pt-2 pb-6">
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-2">
+                Ongoing Coaching Packages
+            </h1>
+<p class="text-slate-500 text-base font-medium leading-relaxed">
+                Choose the level of support that fits your goals.
+            </p>
+</div>
+<!-- Pricing Card -->
+<div class="w-full bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-soft overflow-hidden relative group/card">
+<!-- Red accent top line -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-primary w-full"></div>
+<div class="p-6 pt-8 flex flex-col gap-6">
+<!-- Header Section -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Standard</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                            Most Popular
+                        </span>
+</div>
+<!-- Price -->
+<div class="flex items-baseline gap-1">
+<span class="text-5xl font-black text-slate-900 dark:text-white tracking-tighter">$250</span>
+<span class="text-slate-500 font-medium">/month</span>
+</div>
+<!-- Best For Badge -->
+<div class="bg-primary/5 rounded-lg p-3 border border-primary/10">
+<p class="text-xs uppercase tracking-wide text-primary font-bold mb-1">Best For</p>
+<p class="text-sm text-slate-700 dark:text-slate-300 font-medium leading-snug">
+                            Weight loss, muscle building, lifestyle transformations
+                        </p>
+</div>
+</div>
+<div class="w-full h-px bg-slate-100 dark:bg-slate-800"></div>
+<!-- Features List -->
+<div class="space-y-4">
+<p class="text-sm font-semibold text-slate-400 uppercase tracking-wider">What's Included</p>
+<ul class="space-y-3.5">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[15px] font-medium text-slate-700 dark:text-slate-200 leading-snug">Custom workout program</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[15px] font-medium text-slate-700 dark:text-slate-200 leading-snug">Personalized diet plan</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[15px] font-medium text-slate-700 dark:text-slate-200 leading-snug">Bi-weekly program tweaks</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[15px] font-medium text-slate-700 dark:text-slate-200 leading-snug">Weekly WhatsApp check-ins</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-[15px] font-medium text-slate-700 dark:text-slate-200 leading-snug">Progress tracking + feedback</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Trust/Social Proof subtle section -->
+<div class="mt-8 mb-4 flex items-center justify-center gap-2 opacity-60 grayscale">
+<!-- Placeholder for logos or trust signals, using text/icons for now as requested no images modified -->
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-500">DK</div>
+<div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-600">JL</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-500">AM</div>
+</div>
+<span class="text-xs font-medium text-slate-400">Join 50+ athletes this month</span>
+</div>
+</main>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 w-full bg-white/80 dark:bg-black/80 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 p-4 pb-8 z-20">
+<button class="w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-lg h-14 rounded-xl shadow-lg active:scale-[0.98] transition-transform flex items-center justify-center gap-2 group">
+<span>Start Standard Coaching</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Underdog Athletes - New Year's Offer</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e42121",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211111", // Using this for cards/sections
+                        "pure-black": "#050505", // Deep black for main background
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-pure-black text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto border-x border-neutral-900 shadow-2xl">
+<!-- Header -->
+<div class="sticky top-0 z-50 flex items-center bg-pure-black/90 backdrop-blur-md p-4 justify-between border-b border-white/5">
+<div class="text-white flex size-10 shrink-0 items-center justify-center rounded-full active:bg-white/10 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Underdog Athletes</h2>
+</div>
+<!-- Hero / Headline Section -->
+<div class="px-6 pt-8 pb-4 flex flex-col items-center text-center">
+<!-- Decorative gradient behind headline -->
+<div class="absolute top-0 inset-x-0 h-64 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none z-0"></div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 mb-4">
+<span class="material-symbols-outlined text-primary text-[16px]">bolt</span>
+<span class="text-xs font-bold text-primary tracking-wide uppercase">Limited Time Offer</span>
+</div>
+<h1 class="text-white text-4xl font-extrabold leading-tight tracking-tight mb-2 uppercase drop-shadow-sm">
+                    New Year's<br/>Transformation Deal
+                </h1>
+<p class="text-gray-400 text-lg font-medium leading-normal mt-2">
+                    6-Month Transformation Program
+                </p>
+</div>
+</div>
+<!-- Pricing Card -->
+<div class="px-4 py-2 relative z-10">
+<div class="flex flex-col gap-6 rounded-2xl border border-white/10 bg-background-dark p-6 shadow-xl relative overflow-hidden group">
+<!-- Glow effect -->
+<div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 blur-[60px] rounded-full pointer-events-none group-hover:bg-primary/30 transition-all duration-500"></div>
+<!-- Price Header -->
+<div class="flex flex-col gap-2 relative z-10">
+<div class="flex items-center justify-between">
+<span class="text-gray-400 text-sm font-semibold tracking-wide uppercase">All-Inclusive Coaching</span>
+<span class="inline-flex items-center justify-center rounded-md bg-primary px-2.5 py-1 text-xs font-bold text-white shadow-sm shadow-primary/40">
+                            SAVE $900
+                        </span>
+</div>
+<div class="flex items-end gap-3 mt-2">
+<span class="text-gray-500 text-xl font-medium line-through decoration-primary/50 decoration-2 decoration-slice mb-1">
+                            $2,100
+                        </span>
+<span class="text-white text-5xl font-black leading-none tracking-tight">
+                            $1,200
+                        </span>
+</div>
+<p class="text-gray-400 text-xs font-medium">One-time payment • No hidden fees</p>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-white/10"></div>
+<!-- Features List -->
+<div class="flex flex-col gap-4">
+<p class="text-white text-sm font-bold uppercase tracking-wide">What's Included:</p>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="text-gray-200 text-sm font-medium leading-snug">Custom Training Plan tailored to your physique goals</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="text-gray-200 text-sm font-medium leading-snug">Personalized Nutrition Strategy &amp; Macro breakdown</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="text-gray-200 text-sm font-medium leading-snug">Weekly Check-ins with video feedback adjustments</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="text-gray-200 text-sm font-medium leading-snug">24/7 Support Access via private chat</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="text-gray-200 text-sm font-medium leading-snug">Form Analysis &amp; Correction</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Urgency & Call to Action -->
+<div class="flex flex-col gap-4 px-6 pt-6 pb-12 mt-auto relative z-10">
+<!-- Urgency Banner -->
+<div class="flex items-center justify-center gap-2 text-center animate-pulse">
+<span class="material-symbols-outlined text-primary text-[20px]">warning</span>
+<p class="text-primary text-sm font-bold tracking-wide">
+                    Limited to 10 clients | Offer ends Jan 31st
+                </p>
+</div>
+<!-- Primary CTA Button -->
+<button class="relative w-full overflow-hidden rounded-xl bg-white h-14 text-pure-black shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-transform active:scale-[0.98] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] group">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-gray-200/50 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]"></div>
+<span class="relative flex items-center justify-center gap-2 text-base font-black uppercase tracking-wide">
+                    Claim Your Transformation Spot
+                    <span class="material-symbols-outlined text-[20px] font-bold">arrow_forward</span>
+</span>
+</button>
+<!-- Security Note -->
+<div class="flex items-center justify-center gap-1.5 text-gray-500 opacity-60">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<p class="text-xs font-medium">Secure Checkout via Stripe</p>
+</div>
+</div>
+</div>
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</body></html>
