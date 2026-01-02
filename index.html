@@ -150,8 +150,7 @@
                 <a href="#about" onclick="scrollToSection('about'); return false;" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">About</a>
                 <a href="#why-us" onclick="scrollToSection('why-us'); return false;" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Why Us</a>
                 <a href="#testimonials" onclick="scrollToSection('testimonials'); return false;" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Results</a>
-                <a href="#packages" onclick="scrollToSection('packages'); return false;" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Packages</a>
-                <a href="#offer" onclick="scrollToSection('offer'); return false;" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Special Offer</a>
+                <a href="#offer" onclick="scrollToSection('offer'); return false;" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Programs</a>
             </nav>
         </div>
     </div>
@@ -591,7 +590,7 @@
             <!-- Visual Element -->
             <div class="w-full flex justify-center mb-10 relative group perspective-1000 scale-in delay-200">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 bg-primary/20 rounded-full blur-[60px] -z-10"></div>
-                <div class="relative w-44 aspect-[1/1.4] bg-gradient-to-br from-primary/20 to-primary/5 dark:from-primary/30 dark:to-primary/10 rounded-2xl shadow-[0_20px_40px_-10px_rgba(228,33,33,0.15)] dark:shadow-black/50 flex items-center justify-center border-2 border-primary/20">
+                <div class="relative w-44 aspect-square bg-gradient-to-br from-primary/20 to-primary/5 dark:from-primary/30 dark:to-primary/10 rounded-2xl shadow-[0_20px_40px_-10px_rgba(228,33,33,0.15)] dark:shadow-black/50 flex items-center justify-center border-2 border-primary/20">
                     <div class="text-center p-6">
                         <span class="material-symbols-outlined text-primary text-6xl mb-4 block">fitness_center</span>
                         <p class="text-white dark:text-gray-100 font-extrabold text-xl leading-tight tracking-tighter uppercase">Free<br/>Session</p>
@@ -746,40 +745,54 @@
         </div>
         
         <!-- Toggle Switch -->
-        <div class="flex justify-center mb-12 fade-in delay-200">
+        <div class="flex justify-center mb-8 fade-in delay-200">
             <div class="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1 border border-gray-200 dark:border-gray-700">
-                <button id="toggle-in-person" onclick="togglePackageType('in-person')" class="px-6 py-2 rounded-full font-semibold text-sm transition-all duration-200 bg-gray-900 dark:bg-white text-white dark:text-gray-900">
-                    In Person Plans
+                <button id="toggle-monthly" onclick="togglePackageDuration('monthly')" class="px-4 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all duration-200 bg-gray-900 dark:bg-white text-white dark:text-gray-900">
+                    Monthly
                 </button>
-                <button id="toggle-online" onclick="togglePackageType('online')" class="px-6 py-2 rounded-full font-semibold text-sm transition-all duration-200 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
-                    Online Plans
+                <button id="toggle-4month" onclick="togglePackageDuration('4month')" class="px-4 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all duration-200 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 border-2 border-primary">
+                    4 Month Deal
+                </button>
+                <button id="toggle-6month" onclick="togglePackageDuration('6month')" class="px-4 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all duration-200 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 border-2 border-primary">
+                    6 Month Deal
                 </button>
             </div>
         </div>
         
-        <!-- In Person Plans -->
-        <div id="in-person-plans" class="package-type">
-            <!-- Monthly Plans -->
-            <div class="mb-8">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">Monthly Plans</h3>
-                <div class="grid md:grid-cols-3 gap-8 items-start">
+        <!-- PIF Benefits Message -->
+        <div id="pif-message" class="hidden mb-8 max-w-3xl mx-auto fade-in delay-200">
+            <div class="bg-primary/10 dark:bg-primary/20 border border-primary/30 rounded-xl p-4 sm:p-6">
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl shrink-0">rocket_launch</span>
+                    <div>
+                        <p class="text-gray-900 dark:text-white font-bold text-sm sm:text-base mb-1">Get Results 2-3x Faster</p>
+                        <p class="text-gray-700 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
+                            Clients who invest fully upfront see results 2-3x faster because they're locked in and focused from day one. This results-focused path eliminates the stop-and-start cycle of month-to-month commitments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             <!-- Standard Package -->
             <div class="w-full bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-soft overflow-hidden relative group/card slide-in-left delay-100">
                 <div class="absolute top-0 left-0 right-0 h-1.5 bg-primary w-full"></div>
-                <div class="p-6 pt-8 flex flex-col gap-6">
+                <div class="p-6 pt-8 flex flex-col gap-6" data-package="standard">
                     <!-- Header Section -->
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Standard</h3>
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Lifestyle</h3>
+                            <span class="package-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
                                 Basic Level
                             </span>
                         </div>
                         <!-- Price -->
                         <div class="flex items-baseline gap-1">
-                            <span class="text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$250</span>
-                            <span class="text-gray-500 dark:text-gray-400 font-medium text-base">/month</span>
+                            <span class="package-price text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$250</span>
+                            <span class="package-period text-gray-500 dark:text-gray-400 font-medium text-base">/month</span>
                         </div>
+                        <div class="package-savings hidden text-sm text-primary font-bold"></div>
                         <!-- Best For -->
                         <div class="bg-primary/5 rounded-lg p-3 border border-primary/10">
                             <p class="text-xs uppercase tracking-wide text-primary font-bold mb-1">Best For</p>
@@ -793,7 +806,7 @@
                     <!-- Features List -->
                     <div class="space-y-4">
                         <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">What's Included</p>
-                        <ul class="space-y-3.5">
+                        <ul class="package-features space-y-3.5">
                             <li class="flex items-start gap-3">
                                 <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
                                 <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Custom workout program</span>
@@ -815,10 +828,20 @@
                                 <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Progress tracking + feedback</span>
                             </li>
                         </ul>
+                        <ul class="package-pif-features hidden space-y-3.5 mt-3.5">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">star</span>
+                                <span class="text-[15px] font-bold text-gray-900 dark:text-white leading-snug">VIP access to exclusive content & community</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">star</span>
+                                <span class="text-[15px] font-bold text-gray-900 dark:text-white leading-snug">Extra coaching sessions</span>
+                            </li>
+                        </ul>
                     </div>
                     <!-- CTA Button -->
-                    <a href="https://buy.stripe.com/cNifZhcTD7YX7ueaZVfbq0d" target="_blank" class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
-                        <span>Start Standard Coaching</span>
+                    <a href="https://buy.stripe.com/cNifZhcTD7YX7ueaZVfbq0d" target="_blank" class="package-cta w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
+                        <span class="package-cta-text">Start Lifestyle Coaching</span>
                         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </a>
                 </div>
@@ -831,17 +854,20 @@
                         Most Popular
                     </span>
                 </div>
-                <div class="p-6 pt-10 flex flex-col gap-6">
+                <div class="p-6 pt-10 flex flex-col gap-6" data-package="level-two">
                     <!-- Header Section -->
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Level Two</h3>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Tier Two</h3>
+                            <span class="package-badge hidden inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                            </span>
                         </div>
                         <!-- Price -->
                         <div class="flex items-baseline gap-1">
-                            <span class="text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$300</span>
-                            <span class="text-gray-500 dark:text-gray-400 font-medium text-base">/month</span>
+                            <span class="package-price text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$300</span>
+                            <span class="package-period text-gray-500 dark:text-gray-400 font-medium text-base">/month</span>
                         </div>
+                        <div class="package-savings hidden text-sm text-primary font-bold"></div>
                         <!-- Best For -->
                         <div class="bg-primary/5 rounded-lg p-3 border border-primary/10">
                             <p class="text-xs uppercase tracking-wide text-primary font-bold mb-1">Best For</p>
@@ -855,10 +881,10 @@
                     <!-- Features List -->
                     <div class="space-y-4">
                         <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">What's Included</p>
-                        <ul class="space-y-3.5">
+                        <ul class="package-features space-y-3.5">
                             <li class="flex items-start gap-3">
                                 <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Everything in Standard</span>
+                                <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Everything in Lifestyle</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
@@ -873,32 +899,43 @@
                                 <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Real-time form feedback</span>
                             </li>
                         </ul>
+                        <ul class="package-pif-features hidden space-y-3.5 mt-3.5">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">star</span>
+                                <span class="text-[15px] font-bold text-gray-900 dark:text-white leading-snug">VIP access to exclusive content & community</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">star</span>
+                                <span class="text-[15px] font-bold text-gray-900 dark:text-white leading-snug">Extra coaching sessions</span>
+                            </li>
+                        </ul>
                     </div>
                     <!-- CTA Button -->
-                    <a href="https://buy.stripe.com/00w5kD5rbgvt5m63xtfbq0b" target="_blank" class="w-full bg-gray-900 dark:bg-primary text-white font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl hover:bg-black dark:hover:bg-red-700 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
-                        <span>Start Level Two Coaching</span>
+                    <a href="https://buy.stripe.com/00w5kD5rbgvt5m63xtfbq0b" target="_blank" class="package-cta w-full bg-gray-900 dark:bg-primary text-white font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl hover:bg-black dark:hover:bg-red-700 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
+                        <span class="package-cta-text">Start Tier Two  Coaching</span>
                         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </a>
                 </div>
             </div>
             
             <!-- Pro Bodybuilding Package -->
-            <div class="w-full bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-soft overflow-hidden relative group/card slide-in-right delay-300">
+            <div id="pro-bodybuilding-card" class="w-full bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-soft overflow-hidden relative group/card slide-in-right delay-300">
                 <div class="absolute top-0 left-0 right-0 h-1.5 bg-primary w-full"></div>
-                <div class="p-6 pt-8 flex flex-col gap-6">
+                <div class="p-6 pt-8 flex flex-col gap-6" data-package="pro">
                     <!-- Header Section -->
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">Pro Bodybuilding</h3>
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                            <span class="package-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
                                 Pro Level
                             </span>
                         </div>
                         <!-- Price -->
                         <div class="flex items-baseline gap-1">
-                            <span class="text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$350</span>
-                            <span class="text-gray-500 dark:text-gray-400 font-medium text-base">/month</span>
+                            <span class="package-price text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$350</span>
+                            <span class="package-period text-gray-500 dark:text-gray-400 font-medium text-base">/month</span>
                         </div>
+                        <div class="package-savings hidden text-sm text-primary font-bold"></div>
                         <!-- Best For -->
                         <div class="bg-primary/5 rounded-lg p-3 border border-primary/10">
                             <p class="text-xs uppercase tracking-wide text-primary font-bold mb-1">Best For</p>
@@ -912,7 +949,7 @@
                     <!-- Features List -->
                     <div class="space-y-4">
                         <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">What's Included</p>
-                        <ul class="space-y-3.5">
+                        <ul class="package-features space-y-3.5">
                             <li class="flex items-start gap-3">
                                 <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
                                 <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Everything in Level Two</span>
@@ -938,188 +975,101 @@
                                 <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">On-team doctor access</span>
                             </li>
                         </ul>
+                        <ul class="package-pif-features hidden space-y-3.5 mt-3.5">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">star</span>
+                                <span class="text-[15px] font-bold text-gray-900 dark:text-white leading-snug">VIP access to exclusive content & community</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">star</span>
+                                <span class="text-[15px] font-bold text-gray-900 dark:text-white leading-snug">Extra coaching sessions</span>
+                            </li>
+                        </ul>
                     </div>
                     <!-- CTA Button -->
-                    <a href="https://buy.stripe.com/eVqcN52eZ6UTeWG3xtfbq0c" target="_blank" class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl hover:bg-black dark:hover:bg-gray-200 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
-                        <span>Start Pro Coaching</span>
+                    <a href="https://buy.stripe.com/eVqcN52eZ6UTeWG3xtfbq0c" target="_blank" class="package-cta w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl hover:bg-black dark:hover:bg-gray-200 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
+                        <span class="package-cta-text">Start Pro Coaching</span>
                         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </a>
                 </div>
             </div>
+            
+            <!-- Pro Bodybuilding 4 Month Restriction Message -->
+            <div id="pro-4month-restriction" class="hidden w-full bg-gray-50 dark:bg-gray-800 rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 p-6 text-center">
+                <div class="flex flex-col items-center gap-3">
+                    <span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-4xl">info</span>
+                    <div>
+                        <p class="text-gray-900 dark:text-white font-bold text-lg mb-1">Pro Bodybuilding Package</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Available only for <span class="font-semibold text-gray-900 dark:text-white">Monthly</span> or <span class="font-semibold text-gray-900 dark:text-white">6 Month Deal</span> packages.</p>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <!-- Online Plans -->
-        <div id="online-plans" class="package-type hidden">
-            <div class="grid md:grid-cols-3 gap-8 items-start">
-                <!-- Monthly Plan -->
-                <div class="w-full bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-soft overflow-hidden relative group/card slide-in-left delay-100">
-                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-primary w-full"></div>
-                    <div class="p-6 pt-8 flex flex-col gap-6">
-                        <!-- Header Section -->
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Online Coaching</h3>
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
-                                    Remote
-                                </span>
-                            </div>
-                            <!-- Price -->
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$200</span>
-                                <span class="text-gray-500 dark:text-gray-400 font-medium text-base">/month</span>
-                            </div>
-                            <!-- Best For -->
-                            <div class="bg-primary/5 rounded-lg p-3 border border-primary/10">
-                                <p class="text-xs uppercase tracking-wide text-primary font-bold mb-1">Best For</p>
-                                <p class="text-sm text-gray-700 dark:text-gray-300 font-medium leading-snug">
-                                    Remote coaching with full support and guidance
-                                </p>
-                            </div>
+        <!-- Online Coaching Package (Separate Row) -->
+        <div class="mt-12">
+            <div class="grid md:grid-cols-1 gap-8 items-start max-w-md mx-auto">
+            <!-- Online Coaching Package -->
+            <div class="w-full bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-soft overflow-hidden relative group/card slide-in-right delay-400">
+                <div class="absolute top-0 left-0 right-0 h-1.5 bg-primary w-full"></div>
+                <div class="p-6 pt-8 flex flex-col gap-6">
+                    <!-- Header Section -->
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Online Coaching</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                                Remote
+                            </span>
                         </div>
-                        <!-- Divider -->
-                        <div class="w-full h-px bg-gray-100 dark:bg-gray-700"></div>
-                        <!-- Features List -->
-                        <div class="space-y-4">
-                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">What's Included</p>
-                            <ul class="space-y-3.5">
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Custom workout program delivered online</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Personalized nutrition plan</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Weekly check-ins via messaging</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Video form analysis & feedback</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">24/7 Support access</span>
-                                </li>
-                            </ul>
+                        <!-- Price -->
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$200</span>
+                            <span class="text-gray-500 dark:text-gray-400 font-medium text-base">/month</span>
                         </div>
-                        <!-- CTA Button -->
-                        <a href="https://buy.stripe.com/4gMdR9dXH6UT29U6JFfbq0e" target="_blank" class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
-                            <span>Start Online Coaching</span>
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
+                        <!-- Best For -->
+                        <div class="bg-primary/5 rounded-lg p-3 border border-primary/10">
+                            <p class="text-xs uppercase tracking-wide text-primary font-bold mb-1">Best For</p>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 font-medium leading-snug">
+                                Remote coaching with full support and guidance
+                            </p>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- 4 Month Plan -->
-                <div class="w-full bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-soft overflow-hidden relative group/card fade-in delay-200">
-                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-primary w-full"></div>
-                    <div class="p-6 pt-8 flex flex-col gap-6">
-                        <!-- Header Section -->
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">4 Month Plan</h3>
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                                    Save 10%
-                                </span>
-                            </div>
-                            <!-- Price -->
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$720</span>
-                            </div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">One-time payment • Save $80</p>
-                            <!-- Best For -->
-                            <div class="bg-primary/5 rounded-lg p-3 border border-primary/10">
-                                <p class="text-xs uppercase tracking-wide text-primary font-bold mb-1">Best For</p>
-                                <p class="text-sm text-gray-700 dark:text-gray-300 font-medium leading-snug">
-                                    Committed clients ready for a 4-month transformation
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Divider -->
-                        <div class="w-full h-px bg-gray-100 dark:bg-gray-700"></div>
-                        <!-- Features List -->
-                        <div class="space-y-4">
-                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">What's Included</p>
-                            <ul class="space-y-3.5">
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">All online coaching features</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">4 months of coaching</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Priority support</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- CTA Button -->
-                        <a href="https://buy.stripe.com/4gMdR9dXH6UT29U6JFfbq0e" target="_blank" class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
-                            <span>Purchase 4 Month Plan</span>
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
+                    <!-- Divider -->
+                    <div class="w-full h-px bg-gray-100 dark:bg-gray-700"></div>
+                    <!-- Features List -->
+                    <div class="space-y-4">
+                        <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">What's Included</p>
+                        <ul class="space-y-3.5">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+                                <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Custom workout program delivered online</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+                                <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Personalized nutrition plan</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+                                <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Weekly check-ins via messaging</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+                                <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Video form analysis & feedback</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+                                <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">24/7 Support access</span>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                
-                <!-- 6 Month Plan -->
-                <div class="w-full bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-soft overflow-hidden relative group/card slide-in-right delay-300">
-                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-primary w-full"></div>
-                    <div class="p-6 pt-8 flex flex-col gap-6">
-                        <!-- Header Section -->
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">6 Month Plan</h3>
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                                    Save 15%
-                                </span>
-                            </div>
-                            <!-- Price -->
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-5xl font-black text-gray-900 dark:text-white tracking-tighter">$1,020</span>
-                            </div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">One-time payment • Save $180</p>
-                            <!-- Best For -->
-                            <div class="bg-primary/5 rounded-lg p-3 border border-primary/10">
-                                <p class="text-xs uppercase tracking-wide text-primary font-bold mb-1">Best For</p>
-                                <p class="text-sm text-gray-700 dark:text-gray-300 font-medium leading-snug">
-                                    Serious commitment for maximum transformation
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Divider -->
-                        <div class="w-full h-px bg-gray-100 dark:bg-gray-700"></div>
-                        <!-- Features List -->
-                        <div class="space-y-4">
-                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">What's Included</p>
-                            <ul class="space-y-3.5">
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">All online coaching features</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">6 months of coaching</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
-                                    <span class="text-[15px] font-medium text-gray-700 dark:text-gray-200 leading-snug">Maximum savings & priority support</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- CTA Button -->
-                        <a href="https://buy.stripe.com/4gMdR9dXH6UT29U6JFfbq0e" target="_blank" class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
-                            <span>Purchase 6 Month Plan</span>
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
+                    <!-- CTA Button -->
+                    <a href="https://buy.stripe.com/4gMdR9dXH6UT29U6JFfbq0e" target="_blank" class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg h-14 rounded-xl shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 group mt-auto">
+                        <span>Start Online Coaching</span>
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </section>
@@ -1209,28 +1159,124 @@
         // window.location.href = `/checkout?package=${packageType}`;
     }
     
-    // Toggle between In Person and Online plans
-    function togglePackageType(type) {
-        const inPersonPlans = document.getElementById('in-person-plans');
-        const onlinePlans = document.getElementById('online-plans');
-        const inPersonBtn = document.getElementById('toggle-in-person');
-        const onlineBtn = document.getElementById('toggle-online');
+    // Toggle package duration (Monthly, 4 Month PIF, 6 Month PIF)
+    function togglePackageDuration(duration) {
+        const monthlyBtn = document.getElementById('toggle-monthly');
+        const fourMonthBtn = document.getElementById('toggle-4month');
+        const sixMonthBtn = document.getElementById('toggle-6month');
+        const pifMessage = document.getElementById('pif-message');
+        const proCard = document.getElementById('pro-bodybuilding-card');
+        const proRestriction = document.getElementById('pro-4month-restriction');
         
-        if (type === 'in-person') {
-            inPersonPlans.classList.remove('hidden');
-            onlinePlans.classList.add('hidden');
-            inPersonBtn.classList.add('bg-gray-900', 'dark:bg-white', 'text-white', 'dark:text-gray-900');
-            inPersonBtn.classList.remove('text-gray-600', 'dark:text-gray-400');
-            onlineBtn.classList.remove('bg-gray-900', 'dark:bg-white', 'text-white', 'dark:text-gray-900');
-            onlineBtn.classList.add('text-gray-600', 'dark:text-gray-400');
-        } else {
-            inPersonPlans.classList.add('hidden');
-            onlinePlans.classList.remove('hidden');
-            onlineBtn.classList.add('bg-gray-900', 'dark:bg-white', 'text-white', 'dark:text-gray-900');
-            onlineBtn.classList.remove('text-gray-600', 'dark:text-gray-400');
-            inPersonBtn.classList.remove('bg-gray-900', 'dark:bg-white', 'text-white', 'dark:text-gray-900');
-            inPersonBtn.classList.add('text-gray-600', 'dark:text-gray-400');
+        // Update button states
+        [monthlyBtn, fourMonthBtn, sixMonthBtn].forEach(btn => {
+            btn.classList.remove('bg-gray-900', 'dark:bg-white', 'text-white', 'dark:text-gray-900', 'bg-primary', 'text-white', 'dark:text-white');
+            if (btn !== fourMonthBtn && btn !== sixMonthBtn) {
+                btn.classList.add('text-gray-600', 'dark:text-gray-400');
+            }
+        });
+        
+        if (duration === 'monthly') {
+            monthlyBtn.classList.add('bg-gray-900', 'dark:bg-white', 'text-white', 'dark:text-gray-900');
+            monthlyBtn.classList.remove('text-gray-600', 'dark:text-gray-400');
+            fourMonthBtn.classList.remove('bg-primary', 'text-white', 'dark:text-white');
+            fourMonthBtn.classList.add('text-gray-600', 'dark:text-gray-400');
+            sixMonthBtn.classList.remove('bg-primary', 'text-white', 'dark:text-white');
+            sixMonthBtn.classList.add('text-gray-600', 'dark:text-gray-400');
+            pifMessage.classList.add('hidden');
+            // Show Pro Bodybuilding card, hide restriction
+            if (proCard) proCard.classList.remove('hidden');
+            if (proRestriction) proRestriction.classList.add('hidden');
+        } else if (duration === '4month') {
+            fourMonthBtn.classList.add('bg-primary', 'text-white', 'dark:text-white');
+            fourMonthBtn.classList.remove('text-gray-600', 'dark:text-gray-400');
+            sixMonthBtn.classList.remove('bg-primary', 'text-white', 'dark:text-white');
+            sixMonthBtn.classList.add('text-gray-600', 'dark:text-gray-400');
+            pifMessage.classList.remove('hidden');
+            // Hide Pro Bodybuilding card, show restriction message
+            if (proCard) proCard.classList.add('hidden');
+            if (proRestriction) proRestriction.classList.remove('hidden');
+        } else if (duration === '6month') {
+            sixMonthBtn.classList.add('bg-primary', 'text-white', 'dark:text-white');
+            sixMonthBtn.classList.remove('text-gray-600', 'dark:text-gray-400');
+            fourMonthBtn.classList.remove('bg-primary', 'text-white', 'dark:text-white');
+            fourMonthBtn.classList.add('text-gray-600', 'dark:text-gray-400');
+            pifMessage.classList.remove('hidden');
+            // Show Pro Bodybuilding card, hide restriction
+            if (proCard) proCard.classList.remove('hidden');
+            if (proRestriction) proRestriction.classList.add('hidden');
         }
+        
+        // Package pricing data
+        const packageData = {
+            'standard': {
+                monthly: { price: 250, period: '/month', badge: 'Basic Level', cta: 'Start Lifestyle Coaching', link: 'https://buy.stripe.com/cNifZhcTD7YX7ueaZVfbq0d' },
+                '4month': { price: 1150, period: ' one-time', badge: 'Basic Level', cta: 'Purchase 4 Month Plan', link: 'https://buy.stripe.com/3cIdR98Dn1Azg0Kc3Zfbq0f' },
+                '6month': { price: 1500, period: ' one-time', badge: 'Basic Level', cta: 'Purchase 6 Month Plan', link: 'https://buy.stripe.com/7sYdR94n71Az3dY5FBfbq0g' }
+            },
+            'level-two': {
+                monthly: { price: 300, period: '/month', badge: '', cta: 'Start Tier Two Coaching', link: 'https://buy.stripe.com/00w5kD5rbgvt5m63xtfbq0b' },
+                '4month': { price: 1250, period: ' one-time', badge: '', cta: 'Purchase 4 Month Plan', link: 'https://buy.stripe.com/cNi8wP6vf3IH4i23xtfbq0h' },
+                '6month': { price: 1800, period: ' one-time', badge: '', cta: 'Purchase 6 Month Plan', link: 'https://buy.stripe.com/28E14n4n7cfdeWGaZVfbq0i' }
+            },
+            'pro': {
+                monthly: { price: 350, period: '/month', badge: 'Pro Level', cta: 'Start Pro Coaching', link: 'https://buy.stripe.com/eVqcN52eZ6UTeWG3xtfbq0c' },
+                '4month': { price: 1400, period: ' one-time', badge: 'Pro Level', cta: 'Purchase 4 Month Plan', link: 'https://buy.stripe.com/4gMaEXcTDenlcOygkffbq0j' },
+                '6month': { price: 2450, period: ' one-time', badge: 'Pro Level', cta: 'Purchase 6 Month Plan', link: 'https://buy.stripe.com/4gMaEXcTDenlcOygkffbq0j' }
+            }
+        };
+        
+        // Update each package card
+        ['standard', 'level-two', 'pro'].forEach(packageType => {
+            // Skip Pro Bodybuilding for 4month duration
+            if (packageType === 'pro' && duration === '4month') {
+                return;
+            }
+            
+            const card = document.querySelector(`[data-package="${packageType}"]`);
+            if (!card) return;
+            
+            const data = packageData[packageType][duration];
+            const priceEl = card.querySelector('.package-price');
+            const periodEl = card.querySelector('.package-period');
+            const savingsEl = card.querySelector('.package-savings');
+            const badgeEl = card.querySelector('.package-badge');
+            const ctaEl = card.querySelector('.package-cta');
+            const ctaTextEl = card.querySelector('.package-cta-text');
+            const featuresEl = card.querySelector('.package-features');
+            const pifFeaturesEl = card.querySelector('.package-pif-features');
+            
+            if (priceEl) priceEl.textContent = `$${data.price.toLocaleString()}`;
+            if (periodEl) periodEl.textContent = data.period;
+            
+            if (duration === 'monthly') {
+                if (savingsEl) savingsEl.classList.add('hidden');
+                if (pifFeaturesEl) pifFeaturesEl.classList.add('hidden');
+                if (badgeEl) {
+                    if (data.badge) {
+                        badgeEl.textContent = data.badge;
+                        badgeEl.classList.remove('hidden');
+                    } else {
+                        badgeEl.classList.add('hidden');
+                    }
+                }
+            } else {
+                // Hide savings element for PIF
+                if (savingsEl) savingsEl.classList.add('hidden');
+                if (badgeEl) {
+                    if (data.badge) {
+                        badgeEl.textContent = data.badge;
+                        badgeEl.classList.remove('hidden');
+                    } else {
+                        badgeEl.classList.add('hidden');
+                    }
+                }
+                if (pifFeaturesEl) pifFeaturesEl.classList.remove('hidden');
+            }
+            
+            if (ctaTextEl) ctaTextEl.textContent = data.cta;
+            if (ctaEl) ctaEl.href = data.link;
+        });
     }
     
     // Update header on scroll
