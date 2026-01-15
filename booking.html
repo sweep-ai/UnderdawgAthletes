@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Your Free Consultation - INTENTIONAL MUSCLE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#e42121",
+                    "background-light": "#ffffff",
+                    "background-dark": "#1a1a1a",
+                    "text-dark": "#111111",
+                    "text-light": "#f3f3f3",
+                },
+                fontFamily: {
+                    "display": ["Manrope", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "md": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                boxShadow: {
+                    'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                    'glow': '0 0 15px rgba(228, 33, 33, 0.3)',
+                }
+            },
+        },
+    }
+</script>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        min-height: 100vh;
+    }
+    /* Cal.com embed container */
+    #my-cal-inline-30min {
+        min-height: 600px;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+    
+    @media (max-width: 640px) {
+        #my-cal-inline-30min {
+            min-height: 500px;
+        }
+        
+        /* Ensure calendar container doesn't overflow on mobile */
+        main {
+            overflow-x: hidden;
+        }
+        
+        /* Reduce padding on mobile for calendar container */
+        .cal-container {
+            padding: 0.5rem !important;
+        }
+    }
+    
+    /* Improve touch targets on mobile */
+    @media (max-width: 640px) {
+        a, button {
+            min-height: 44px;
+            min-width: 44px;
+        }
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-dark dark:text-text-light antialiased selection:bg-primary selection:text-white">
+    
+<!-- Sticky Navigation Header -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-all duration-300 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+                <img src="assets/IntentionalMuscleLogo.png" alt="INTENTIONAL MUSCLE" class="h-10 sm:h-14 dark:hidden" />
+                <img src="assets/IntentionalMuscleLogo.png" alt="INTENTIONAL MUSCLE" class="h-10 sm:h-14 hidden dark:block" />
+                <span class="font-extrabold text-sm sm:text-lg tracking-tight hidden sm:inline">INTENTIONAL MUSCLE<span class="text-primary">.</span></span>
+            </a>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center gap-6 ml-auto">
+                <a href="index.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Home</a>
+                <a href="index.html#why-us" onclick="if(window.location.pathname.includes('index.html')) {scrollToSection('why-us'); return false;}" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Why Us</a>
+                <a href="index.html#testimonials" onclick="if(window.location.pathname.includes('index.html')) {scrollToSection('testimonials'); return false;}" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Results</a>
+                <a href="index.html#offer" onclick="if(window.location.pathname.includes('index.html')) {scrollToSection('offer'); return false;}" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Programs</a>
+            </nav>
+            
+            <!-- Back Button -->
+            <a href="index.html" class="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors flex items-center gap-1 ml-2 sm:ml-4">
+                <span class="material-symbols-outlined text-base">arrow_back</span>
+                <span class="hidden sm:inline">Back</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="pt-20 sm:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-6 sm:mb-8 fade-in">
+            <div class="inline-block px-3 py-1 mb-3 sm:mb-4 bg-primary/10 rounded-full">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary">Free Consultation</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-3 sm:mb-4 tracking-tight text-gray-900 dark:text-white px-2">
+                Book Your <span class="text-primary">Free Consultation</span>
+            </h1>
+            <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-2xl mx-auto px-2">
+                Schedule your free consultation and experience INTENTIONAL MUSCLE firsthand. Let's discuss your goals and create a personalized plan for your transformation.
+            </p>
+        </div>
+
+        <!-- Booking Embed Container -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-2 sm:p-4 md:p-6 lg:p-8 mb-6 sm:mb-8 fade-in delay-200">
+            <!-- Cal inline embed code begins -->
+            <div style="width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch" id="my-cal-inline-30min"></div>
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+              Cal("init", "30min", {origin:"https://app.cal.com"});
+
+              // Detect mobile and use appropriate layout
+              const isMobile = window.innerWidth < 768;
+              const layout = isMobile ? "column_view" : "month_view";
+
+              Cal.ns["30min"]("inline", {
+                elementOrSelector:"#my-cal-inline-30min",
+                config: {"layout":layout},
+                calLink: "intentionalmuscle/30min",
+              });
+
+              Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":layout});
+              
+              // Update layout on window resize
+              window.addEventListener('resize', function() {
+                const isMobileNow = window.innerWidth < 768;
+                const newLayout = isMobileNow ? "column_view" : "month_view";
+                if (Cal.ns["30min"]) {
+                  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":newLayout});
+                }
+              });
+            </script>
+            <!-- Cal inline embed code ends -->
+        </div>
+
+        <!-- What to Expect Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8 fade-in delay-300">
+            <!-- Card 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 shadow-sm">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary">chat_bubble</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">1-on-1 Consultation</h3>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Personalized discussion about your goals, challenges, and fitness journey</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 shadow-sm">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary">fitness_center</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">Free Workout Session</h3>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Experience David's coaching style with a complimentary workout session</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 shadow-sm">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary">target</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">Goal Planning</h3>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Get a personalized assessment and roadmap for your transformation</p>
+            </div>
+        </div>
+
+        <!-- Additional Resources Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 fade-in delay-400">
+            <!-- Next Steps Card -->
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-primary text-3xl">arrow_forward</span>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Ready to Transform?</h3>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    After your consultation, explore our coaching packages designed to help you build intentional muscle and achieve your goals.
+                </p>
+                <a href="index.html#packages" class="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-primary text-white font-bold text-sm sm:text-base rounded-lg hover:bg-red-700 transition-colors w-full sm:w-auto justify-center">
+                    <span>View Coaching Packages</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+            
+            <!-- Support Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Questions?</h3>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    Have questions before booking? Learn more about our approach and see what makes INTENTIONAL MUSCLE different.
+                </p>
+                <a href="index.html#why-us" class="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-sm sm:text-base rounded-lg hover:bg-black/90 dark:hover:bg-gray-100 transition-colors w-full sm:w-auto justify-center">
+                    <span>Learn More</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="py-12 px-6 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto text-center">
+        <div class="flex items-center justify-center mb-4">
+            <img src="assets/IntentionalMuscleLogo.png" alt="INTENTIONAL MUSCLE" class="h-14" />
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Elite Coaching for Champions</p>
+        <p class="text-gray-500 text-xs">© 2024 INTENTIONAL MUSCLE. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll animations
+    const observerOptions = {
+        threshold: 0.05,
+        rootMargin: '0px 0px 100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedElements = document.querySelectorAll('.fade-in');
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+    });
+    
+    // Update header on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('main-header');
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-lg');
+        } else {
+            header.classList.remove('shadow-lg');
+        }
+    });
+</script>
+
+<style>
+    /* Animation styles */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .fade-in.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .delay-100 {
+        transition-delay: 0.1s;
+    }
+    
+    .delay-200 {
+        transition-delay: 0.2s;
+    }
+    
+    .delay-300 {
+        transition-delay: 0.3s;
+    }
+    
+    .delay-400 {
+        transition-delay: 0.4s;
+    }
+</style>
+
+</body>
+</html>
+
